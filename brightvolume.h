@@ -1,6 +1,6 @@
 class brightVolume {
 private:
-    float brightFreqConstant = 300.0f;
+    float brightFreqConstant = 300.0f; //this can easily grow to ten times the value at low volume settings: oversampling is highly recommended
     float brightFreq;
     float brightGain;
     float volume;
@@ -10,7 +10,7 @@ private:
     
     
 public:
-    float updateFreq() {
+    void updateFreq() {
        return brightFreqConstant/ (volume+inputResistance);
     };
     updateSampleRate();
